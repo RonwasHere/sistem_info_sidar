@@ -77,7 +77,12 @@ class _LoginPageState extends State<LoginPage> {
               TextFormField(
                 style: TextStyle(color: Colors.white, fontSize: 20),
                 decoration: InputDecoration(
-                  suffixIcon: Icon(Icons.visibility),
+                  suffixIcon: GestureDetector(
+                    onTap: () {
+                      obscureText = !obscureText;
+                    },
+                    child: Icon(obscureText ? Icons.visibility : Icons.visibility_off),
+                  ),
                   suffixIconColor: Color(0xff3085fe),
                   enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide(
