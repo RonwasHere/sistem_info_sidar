@@ -79,9 +79,11 @@ class _LoginPageState extends State<LoginPage> {
                 decoration: InputDecoration(
                   suffixIcon: GestureDetector(
                     onTap: () {
-                      obscureText = !obscureText;
+                      setState(() {
+                        obscureText = !obscureText;
+                      });
                     },
-                    child: Icon(obscureText ? Icons.visibility : Icons.visibility_off),
+                    child: Icon(obscureText ? Icons.visibility_off : Icons.visibility),
                   ),
                   suffixIconColor: Color(0xff3085fe),
                   enabledBorder: OutlineInputBorder(
